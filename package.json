@@ -1,0 +1,29 @@
+{
+  "name": "keys-to-password",
+  "version": "1.0.0",
+  "description": "Generate and recover passwords from private and public keys.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielShamir93/keys-to-password-npm-package.git"
+  },
+  "keywords": [
+    "private",
+    "public",
+    "key",
+    "password"
+  ],
+  "author": "Daniel Shamir",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanielShamir93/keys-to-password-npm-package/issues"
+  },
+  "homepage": "https://github.com/DanielShamir93/keys-to-password-npm-package#readme",
+  "dependencies": {
+    "object-hash": "^2.2.0"
+  }
+}
