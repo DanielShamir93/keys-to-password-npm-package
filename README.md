@@ -1,6 +1,8 @@
 # keys-to-password
 
-Generate and recover passwords from private and public keys.
+Generate and recover passwords via private and public keys.
+
+[<img src="1200px-Npm-logo.svg.png" width=100>](https://www.npmjs.com/package/keys-to-password?activeTab=versions)
 
 ## Installation
 
@@ -9,8 +11,6 @@ node:
 ```js
 npm install keys-to-password
 ```
-
-[npm](https://www.npmjs.com/package/keys-to-password?activeTab=versions)
 
 ### A general example of generating and recovering a password 
 ```js
@@ -74,4 +74,3 @@ password.generateFromPattern('A\\d{10}-PASS'); // => 'A2563495820-PASS'
 - \\u{n} assign n uppercase letters.
 - \\l{n} assign n lowercase letters.
 - \\s{n} assign n symbol characters.
-
