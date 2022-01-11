@@ -12,7 +12,7 @@ node:
 npm install keys-to-password
 ```
 
-### A general example of generating and recovering a password 
+## A general example of generating and recovering a password 
 ```js
 // Generate password
 const password = new Password('your-private-key');
@@ -30,7 +30,7 @@ passwordRecover.generate({passLength: 15});
 passwordRecover.getPassword() // => 'y$$&TTU+-&ZZ1-0'
 ```
 
-### Default
+## Default
 
 ```js
 const password = new Password('your-private-key');
@@ -38,7 +38,7 @@ password.setKeyboard(); // Password can contain all keyboard characters
 password.generate(); // Password-length = 12
 ```
 
-### Modify password using arguments
+## Modify password using arguments
 
 ```js
 const password = new Password('your-private-key');
@@ -60,14 +60,15 @@ const generateConfig = {
 password.generate(generateConfig);
 ```
 
-### Modify password using pattern
+## Modify password using pattern function
 
 ```js
 const password = new Password('your-private-key');
-password.generateFromPattern('A\\d{10}-PASS'); // => 'A2563495820-PASS'
+password.generateFromPattern('A\\d{10}-PASS');
+password.getPassword() // => 'A2563495820-PASS'
 ```
 
-#### Pattern options:
+### Pattern options:
 
 - All keyboard characters.
 - \\d{n} assign n digits.
@@ -75,5 +76,5 @@ password.generateFromPattern('A\\d{10}-PASS'); // => 'A2563495820-PASS'
 - \\l{n} assign n lowercase letters.
 - \\s{n} assign n symbol characters.
 
-#### Note:
+### Note:
 - mustContainChars argument in the keyboard config not yet implemented.
