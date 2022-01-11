@@ -2,7 +2,7 @@
 
 Generate and recover passwords via private and public keys.
 
-[<img src="1200px-Npm-logo.svg.png" width=100>](https://www.npmjs.com/package/keys-to-password?activeTab=versions)
+[<img src="1200px-Npm-logo.svg.png" width=100>](https://www.npmjs.com/package/keys-to-password)
 
 ## Installation
 
@@ -34,8 +34,8 @@ passwordRecover.getPassword() // => 'y$$&TTU+-&ZZ1-0'
 
 ```js
 const password = new Password('your-private-key');
-password.setKeyboard(); // Password can contain all keyboard characters.
-password.generate(); // Password-length = 12.
+password.setKeyboard(); // Password can contain all keyboard characters
+password.generate(); // Password-length = 12
 ```
 
 ### Modify password using arguments
@@ -48,7 +48,7 @@ const keyboardConfig = {
     isContainUpperCase = false, // Uppercase letters will not be in the generated password
     isContainLowerCase = true,
     isContainSymbols = true,
-    mustContainChars = "d3", // Characters d,3 will be in the generated password
+    mustContainChars = "d3", // Characters d,3 will be in the generated password (not yet implemented)
 }
 password.setKeyboard(keyboardConfig);
 
@@ -67,10 +67,13 @@ const password = new Password('your-private-key');
 password.generateFromPattern('A\\d{10}-PASS'); // => 'A2563495820-PASS'
 ```
 
-#### pattern options:
+#### Pattern options:
 
 - All keyboard characters.
 - \\d{n} assign n digits.
 - \\u{n} assign n uppercase letters.
 - \\l{n} assign n lowercase letters.
 - \\s{n} assign n symbol characters.
+
+#### Note:
+- mustContainChars argument in the keyboard config not yet implemented.
