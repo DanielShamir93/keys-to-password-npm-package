@@ -1,6 +1,6 @@
 # keys-to-password
 
-Generate and recover passwords via private and public keys (up to 40 characters in the generated password).
+#### Generate and recover passwords via private and public keys (up to 40 characters in the generated password).
 
 [<img src="1200px-Npm-logo.svg.png" width=100>](https://www.npmjs.com/package/keys-to-password)
 
@@ -20,33 +20,48 @@ import Password from "keys-to-password";
 
 ## A general example of generating and recovering a password
 
+
+### 1) Generate password
+
 ```js
-// Generate password
 const password = new Password("your-private-key");
 password.setKeyboard();
 password.generate({ passLength: 15 });
 password.getPassword(); // => 'y$$&TTU+-&ZZ1-0'
+```
 
-// Get password public-key from generated password
+### 2) Get password public-key from the generated password
+
+```js
 const publicKey = password.getPublicKey();
+```
 
-// Recover password from private and public keys
+### 3) Recover password by private and public keys
+
+```js
 const passwordRecover = new Password("your-private-key", publicKey);
 passwordRecover.setKeyboard();
 passwordRecover.generate({ passLength: 15 });
+```
+
+### 4) Retrieving the password
+
+```js
 passwordRecover.getPassword(); // => 'y$$&TTU+-&ZZ1-0'
 ```
 
-## Default
+## Default usage
 
 ```js
 const password = new Password("your-private-key");
 password.setKeyboard(); // Password can contain all keyboard characters
 password.generate(); // Password-length = 12
+password.getPassword(); // => '?gj39?GdA_gkf'
 ```
 
 ## Modify password using arguments
 
+### 1) Modify keyboard
 ```js
 const password = new Password('your-private-key');
 const keyboardConfig = {
@@ -57,13 +72,24 @@ const keyboardConfig = {
     isContainSymbols = true,
     mustContainChars = "d3", // Characters d,3 will be in the generated password (not yet implemented)
 }
-password.setKeyboard(keyboardConfig);
 
+password.setKeyboard(keyboardConfig);
+```
+
+### 2) Extra generation options
+```js
 const generateConfig = {
   passLength = 20,
   passStartsWith = "abc", // Generated password will start with the string 'abc'
   passEndsWidth = "xyz" // Generated password will end with the string 'abc'
 }
+
+password.generate(generateConfig);
+```
+
+### 3) Retrieving the password
+
+```js
 password.generate(generateConfig);
 ```
 
@@ -75,14 +101,14 @@ password.generateFromPattern("A\\d{10}-PASS");
 password.getPassword(); // => 'A2563495820-PASS'
 ```
 
-### Pattern options:
+### Pattern syntax options:
 
 - All keyboard characters.
-- \\d{n} assign n digits.
-- \\u{n} assign n uppercase letters.
-- \\l{n} assign n lowercase letters.
-- \\s{n} assign n symbol characters.
+- \\d{n}  =>  assign n digits.
+- \\u{n}  =>  assign n uppercase letters.
+- \\l{n}  =>  assign n lowercase letters.
+- \\s{n}  =>  assign n symbol characters.
 
 ### Note:
 
-- mustContainChars argument in the keyboard config not yet implemented.
+- 'mustContainChars' argument in the keyboard config not yet implemented.
