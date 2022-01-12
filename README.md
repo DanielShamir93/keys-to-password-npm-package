@@ -4,7 +4,7 @@
 
 #### Generate and recover passwords via private and public keys (up to 40 characters in the generated password).
 
-[<img src="1200px-Npm-logo.svg.png" width=100>](https://www.npmjs.com/package/keys-to-password)
+[<img src="./images/1200px-Npm-logo.svg.png" width=100>](https://www.npmjs.com/package/keys-to-password)
 
 ## Installation
 
@@ -32,7 +32,11 @@ password.getPassword(); // => '?gj39?GdA_gkf'
 ```
 </br>
 
-## A general example of generating and recovering a password
+## Workflow
+
+<img src="./images/workflow.png">
+
+## A general example
 
 
 ### 1) Generate password
