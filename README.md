@@ -1,5 +1,7 @@
 # keys-to-password
 
+</br>
+
 #### Generate and recover passwords via private and public keys (up to 40 characters in the generated password).
 
 [<img src="1200px-Npm-logo.svg.png" width=100>](https://www.npmjs.com/package/keys-to-password)
@@ -17,6 +19,18 @@ npm install keys-to-password
 ```js
 import Password from "keys-to-password";
 ```
+
+</br></br>
+
+## Default usage
+
+```js
+const password = new Password("your-private-key");
+password.setKeyboard(); // Password can contain all keyboard characters
+password.generate(); // Password-length = 12
+password.getPassword(); // => '?gj39?GdA_gkf'
+```
+</br>
 
 ## A general example of generating and recovering a password
 
@@ -50,14 +64,7 @@ passwordRecover.generate({ passLength: 15 });
 passwordRecover.getPassword(); // => 'y$$&TTU+-&ZZ1-0'
 ```
 
-## Default usage
-
-```js
-const password = new Password("your-private-key");
-password.setKeyboard(); // Password can contain all keyboard characters
-password.generate(); // Password-length = 12
-password.getPassword(); // => '?gj39?GdA_gkf'
-```
+</br>
 
 ## Modify password using arguments
 
@@ -93,6 +100,8 @@ password.generate(generateConfig);
 password.generate(generateConfig);
 ```
 
+</br>
+
 ## Modify password using pattern function
 
 ```js
@@ -109,6 +118,8 @@ password.getPassword(); // => 'A2563495820-PASS'
 - \\l{n}  =>  assign n lowercase letters.
 - \\s{n}  =>  assign n symbol characters.
 
+</br></br>
+___
 ### Note:
 
 - 'mustContainChars' argument in the keyboard config not yet implemented.
