@@ -36,6 +36,8 @@ password.getPassword(); // => '?gj39?GdA_gkf'
 
 <img src="./images/workflow.png">
 
+</br>
+
 ## A general example
 
 
