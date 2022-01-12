@@ -18,7 +18,7 @@
     "password"
   ],
   "author": "Daniel Shamir",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/DanielShamir93/keys-to-password-npm-package/issues"
   },
