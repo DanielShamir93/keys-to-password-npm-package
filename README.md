@@ -104,10 +104,16 @@ const generateConfig = {
 password.generate(generateConfig);
 ```
 
-### 3) Retrieving the password
+### 3) Get password's public-key to keep in user storage for later password recover
 
 ```js
-passwordRecover.getPassword(); // => 'abc3s:#dfs$2kl~d3xyz'
+const publicKey = password.getPublicKey();
+```
+
+### 4) Retrieving the password
+
+```js
+password.getPassword(); // => 'abc3s:#dfs$2kl~d3xyz'
 ```
 
 </br>
