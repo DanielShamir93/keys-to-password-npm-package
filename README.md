@@ -127,7 +127,3 @@ password.getPassword(); // => 'A2563495820-PASS'
 - \\s{n}  =>  assign n symbol characters.
 
 </br></br>
-___
-### Note:
-
-- 'mustContainChars' argument in the keyboard config not yet implemented.
