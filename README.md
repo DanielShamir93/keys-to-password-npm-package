@@ -79,13 +79,14 @@ passwordRecover.getPassword(); // => 'y$$&TTU+-&ZZ1-0'
 ### 1) Modify keyboard
 ```js
 const password = new Password('your-private-key');
+// The keyboard holds the characters from which you can generate passwords
 const keyboardConfig = {
     avoidChars = "1a$",  // Characters 1,a,$ will not be in the generated password
     isContainDigits = true,
     isContainUpperCase = false, // Uppercase letters will not be in the generated password
     isContainLowerCase = true,
     isContainSymbols = true,
-    mustContainChars = "d3", // Characters d,3 will be in the generated password (not yet implemented)
+    mustContainChars = "d3", // Assign d,3 characters to the keyboard
 }
 
 password.setKeyboard(keyboardConfig);
