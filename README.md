@@ -32,6 +32,7 @@ password.setKeyboard(); // Password can contain all keyboard characters
 password.generate(); // Password-length = 12
 password.getPassword(); // => '?gj39?GdA_gkf'
 ```
+
 </br>
 
 ## Workflow
@@ -106,7 +107,7 @@ password.generate(generateConfig);
 ### 3) Retrieving the password
 
 ```js
-password.generate(generateConfig);
+passwordRecover.getPassword(); // => 'abc3s:#dfs$2kl~d3xyz'
 ```
 
 </br>
