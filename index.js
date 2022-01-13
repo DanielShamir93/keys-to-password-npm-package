@@ -44,6 +44,7 @@ export default class Password {
       }
     }
 
+    // Add specific characters to keyboard
     Array.from(mustContainChars).forEach((char) => {
       if (!this.keyboard.includes(char)) {
         this.keyboard.push(char);

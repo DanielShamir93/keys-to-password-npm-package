@@ -52,7 +52,7 @@ password.generate({ passLength: 15 });
 password.getPassword(); // => 'y$$&TTU+-&ZZ1-0'
 ```
 
-### 2) Get password public-key from the generated password
+### 2) Get password's public-key from the generated password
 
 ```js
 const publicKey = password.getPublicKey();

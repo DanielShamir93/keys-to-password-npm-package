@@ -15,7 +15,9 @@
     "private",
     "public",
     "key",
-    "password"
+    "keys",
+    "password",
+    "secure"
   ],
   "author": "Daniel Shamir",
   "license": "MIT",
