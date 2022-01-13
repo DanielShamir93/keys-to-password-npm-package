@@ -29,8 +29,12 @@ import Password from "keys-to-password";
 ```js
 const password = new Password("your-private-key");
 password.setKeyboard(); // Password can contain all keyboard characters
-password.generate(); // Password-length = 12
+password.generate(); // Default password-length = 12
 password.getPassword(); // => '?gj39?GdA_gkf'
+
+const publicKey = password.getPublicKey(); // save into user storage
+const passwordRecover = new Password("your-private-key", publicKey);
+passwordRecover.getPassword(); // => '?gj39?GdA_gkf'
 ```
 
 </br>
@@ -67,7 +71,7 @@ passwordRecover.setKeyboard();
 passwordRecover.generate({ passLength: 15 });
 ```
 
-### 4) Retrieving the password
+### 4) Retrieve the password
 
 ```js
 passwordRecover.getPassword(); // => 'y$$&TTU+-&ZZ1-0'
@@ -110,7 +114,7 @@ password.generate(generateConfig);
 const publicKey = password.getPublicKey();
 ```
 
-### 4) Retrieving the password
+### 4) Retrieve the password
 
 ```js
 password.getPassword(); // => 'abc3s:#dfs$2kl~d3xyz'
@@ -122,8 +126,8 @@ password.getPassword(); // => 'abc3s:#dfs$2kl~d3xyz'
 
 ```js
 const password = new Password("your-private-key");
-password.generateFromPattern("A\\d{10}-PASS");
-password.getPassword(); // => 'A2563495820-PASS'
+password.generateFromPattern("A_\\d{10}-PASS");
+password.getPassword(); // => 'A_2563495820-PASS'
 ```
 
 ### Pattern syntax options:
