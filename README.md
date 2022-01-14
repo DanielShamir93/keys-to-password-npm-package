@@ -120,9 +120,11 @@ const publicKey = password.getPublicKey();
 password.getPassword(); // => 'abc3s:#dfs$2kl~d3xyz'
 ```
 
+- To recover your password keep your config objects as well as your public-key stored.
+
 </br>
 
-## Modify password using pattern function
+## Modify password using pattern function only
 
 ```js
 const password = new Password("your-private-key");
@@ -130,7 +132,9 @@ password.generateFromPattern("A_\\d{10}-PASS");
 password.getPassword(); // => 'A_2563495820-PASS'
 ```
 
-### Pattern syntax options:
+- To recover your password keep your pattern string as well as your public-key stored.
+
+### Pattern's syntax options:
 
 - All keyboard characters.
 - \\d{n}  =>  assign n digits.
