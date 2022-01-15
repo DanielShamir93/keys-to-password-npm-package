@@ -14,6 +14,12 @@ node:
 npm install keys-to-password
 ```
 
+yarn:
+
+```js
+yarn add keys-to-password
+```
+
 ## import
 
 ```js
@@ -146,5 +152,16 @@ password.getPassword(); // => 'A_2563495820-PASS'
 - \\u{n}  =>  assign n uppercase letters.
 - \\l{n}  =>  assign n lowercase letters.
 - \\s{n}  =>  assign n symbol characters.
+
+</br>
+
+## New features in progress
+
+### - Get generated password strength.
+  Calculation parameters:
+  * Password's length.
+  * Password's characters types.
+  * Password Contains words from the dictionary.
+  * Password Contains sequences.
 
 </br></br>
