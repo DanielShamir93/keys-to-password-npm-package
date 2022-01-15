@@ -12,7 +12,8 @@
 
 </br>
 
-[<img src="./images/1200px-Npm-logo.svg.png" width=100>](https://www.npmjs.com/package/keys-to-password)
+[<img src="./images/1200px-Npm-logo.svg.png" width=100>](https://www.npmjs.com/package/keys-to-password)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[<img src="./images/yarn-logo.png" width=100>](https://yarnpkg.com/package/keys-to-password)
 
 </br>
 
