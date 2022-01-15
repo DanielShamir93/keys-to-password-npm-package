@@ -1,6 +1,6 @@
-import hash from "object-hash";
+const hash = require("object-hash");
 
-export default class Password {
+class Password {
   constructor(privateKey, publicKey = hash(Math.random())) {
     this.hashedPrivateKey = hash(privateKey);
     this.publicKey = publicKey;
@@ -252,3 +252,5 @@ export default class Password {
     return this.publicKey;
   }
 }
+
+module.exports = { Password };

@@ -1,5 +1,3 @@
-</br>
-
 # keys-to-password
 
 </br>
@@ -19,7 +17,11 @@ npm install keys-to-password
 ## import
 
 ```js
-import Password from "keys-to-password";
+const { Password } = require("keys-to-password");
+
+OR
+
+import { Password } from "keys-to-password";
 ```
 
 </br></br>
@@ -31,10 +33,13 @@ const password = new Password("your-private-key");
 password.setKeyboard(); // Password can contain all keyboard characters
 password.generate(); // Default password-length = 12
 password.getPassword(); // => '?gj39?GdA_gkf'
+console.log(password.getPassword())
 
 const publicKey = password.getPublicKey(); // save into user storage
 const passwordRecover = new Password("your-private-key", publicKey);
-passwordRecover.getPassword(); // => '?gj39?GdA_gkf'
+passwordRecover.setKeyboard();
+passwordRecover.generate();
+console.log(passwordRecover.getPassword()); // => '?gj39?GdA_gkf'
 ```
 
 </br>
@@ -86,12 +91,12 @@ passwordRecover.getPassword(); // => 'y$$&TTU+-&ZZ1-0'
 const password = new Password('your-private-key');
 // The keyboard holds the characters from which you can generate passwords
 const keyboardConfig = {
-    avoidChars = "1a$",  // Characters 1,a,$ will not be in the generated password
-    isContainDigits = true,
-    isContainUpperCase = false, // Uppercase letters will not be in the generated password
-    isContainLowerCase = true,
-    isContainSymbols = true,
-    mustContainChars = "d3", // Assign d,3 characters to the keyboard
+    avoidChars: "1a$",  // Characters 1,a,$ will not be in the generated password
+    isContainDigits: true,
+    isContainUpperCase: false, // Uppercase letters will not be in the generated password
+    isContainLowerCase: true,
+    isContainSymbols: true,
+    mustContainChars: "d3", // Assign d,3 characters to the keyboard
 }
 
 password.setKeyboard(keyboardConfig);
@@ -100,9 +105,9 @@ password.setKeyboard(keyboardConfig);
 ### 2) Extra generation options
 ```js
 const generateConfig = {
-  passLength = 20,
-  passStartsWith = "abc", // Generated password will start with the string 'abc'
-  passEndsWidth = "xyz" // Generated password will end with the string 'abc'
+  passLength: 20,
+  passStartsWith: "abc", // Generated password will start with the string 'abc'
+  passEndsWidth: "xyz" // Generated password will end with the string 'abc'
 }
 
 password.generate(generateConfig);
