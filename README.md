@@ -2,9 +2,19 @@
 
 </br>
 
-#### Generate and recover passwords via private and public keys (up to 40 characters in the generated password).
+### Generate and recover passwords via private and public keys.
+* Use of the private and public key method to secure password recovery only by the private key owner.
+* Randomly generate passwords.
+* Up to 40 characters in a generated password.
+* Password can be modified easily in advance (see examples below).
+* Option for using patterns (see more details below).
+* More features will come soon (getting password strength and more).
+
+</br>
 
 [<img src="./images/1200px-Npm-logo.svg.png" width=100>](https://www.npmjs.com/package/keys-to-password)
+
+</br>
 
 ## Installation
 
@@ -39,13 +49,12 @@ const password = new Password("your-private-key");
 password.setKeyboard(); // Password can contain all keyboard characters
 password.generate(); // Default password-length = 12
 password.getPassword(); // => '?gj39?GdA_gkf'
-console.log(password.getPassword())
 
 const publicKey = password.getPublicKey(); // save into user storage
 const passwordRecover = new Password("your-private-key", publicKey);
 passwordRecover.setKeyboard();
 passwordRecover.generate();
-console.log(passwordRecover.getPassword()); // => '?gj39?GdA_gkf'
+passwordRecover.getPassword(); // => '?gj39?GdA_gkf'
 ```
 
 </br>
@@ -157,8 +166,8 @@ password.getPassword(); // => 'A_2563495820-PASS'
 
 ## New features in progress
 
-### - Get generated password strength.
-  Calculation parameters:
+### Get generated password strength.
+  Calculation parameters which are taking into account:
   * Password's length.
   * Password's characters types.
   * Password Contains words from the dictionary.
