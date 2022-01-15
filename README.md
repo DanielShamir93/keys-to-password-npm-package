@@ -12,20 +12,15 @@
 
 </br>
 
-[<img src="./images/1200px-Npm-logo.svg.png" width=100>](https://www.npmjs.com/package/keys-to-password)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-[<img src="./images/yarn-logo.png" width=100>](https://yarnpkg.com/package/keys-to-password)
-
-</br>
-
 ## Installation
 
-node:
+[<img src="./images/1200px-Npm-logo.svg.png" width=100>](https://www.npmjs.com/package/keys-to-password)
 
 ```js
 npm install keys-to-password
 ```
 
-yarn:
+[<img src="./images/yarn-logo.png" width=100>](https://yarnpkg.com/package/keys-to-password)
 
 ```js
 yarn add keys-to-password
@@ -60,14 +55,13 @@ passwordRecover.getPassword(); // => '?gj39?GdA_gkf'
 
 </br>
 
-## Workflow
+## Visual Demonstration Of The Package Concept
 
 <img src="./images/workflow.png">
 
 </br>
 
-## A general example
-
+## Generic example
 
 ### 1) Generate password
 
@@ -171,7 +165,7 @@ password.getPassword(); // => 'A_2563495820-PASS'
   Calculation parameters which are taking into account:
   * Password's length.
   * Password's characters types.
-  * Password Contains words from the dictionary.
-  * Password Contains sequences.
+  * Password contains words from the dictionary.
+  * Password contains sequences.
 
 </br></br>
