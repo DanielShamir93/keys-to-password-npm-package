@@ -57,7 +57,7 @@ passwordRecover.getPassword(); // => '?gj39?GdA_gkf'
 
 ## Visual Demonstration Of The Package Concept
 
-<img src="./images/workflow.png">
+<img src="https://i.ibb.co/bz6WvqD/workflow.png">
 
 </br>
 
