@@ -14,13 +14,13 @@
 
 ## Installation
 
-[<img src="./images/1200px-Npm-logo.svg.png" width=100>](https://www.npmjs.com/package/keys-to-password)
+[<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Npm-logo.svg/1200px-Npm-logo.svg.png" width=100>](https://www.npmjs.com/package/keys-to-password)
 
 ```js
 npm install keys-to-password
 ```
 
-[<img src="./images/yarn-logo.png" width=100>](https://yarnpkg.com/package/keys-to-password)
+[<img src="https://stelligent.com/wp-content/uploads/2017/04/yarn-1.png" width=100>](https://yarnpkg.com/package/keys-to-password)
 
 ```js
 yarn add keys-to-password
