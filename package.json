@@ -27,7 +27,6 @@
   },
   "homepage": "https://github.com/DanielShamir93/keys-to-password-npm-package#readme",
   "dependencies": {
-    "npm": "^8.3.1",
     "object-hash": "^2.2.0"
   }
 }
