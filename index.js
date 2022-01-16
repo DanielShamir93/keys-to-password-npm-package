@@ -1,7 +1,7 @@
 const hash = require("object-hash");
 
 class Password {
-  constructor(privateKey, publicKey = hash(Math.random())) {
+  constructor(privateKey = "", publicKey = hash(Math.random())) {
     this.hashedPrivateKey = hash(privateKey);
     this.publicKey = publicKey;
     this.password = "";
@@ -207,7 +207,7 @@ class Password {
     }
   };
 
-  breakPatternToArray = (pattern) => {
+  breakPatternToArray = (pattern = "") => {
     const matchesArray = [];
     let str = "";
     let sequence = "";

@@ -1,8 +1,10 @@
 # keys-to-password
 
+### Generate and recover passwords via private and public keys.
+
 </br>
 
-### Generate and recover passwords via private and public keys.
+## Features
 * Use of the private and public key method to secure password recovery only by the private key owner.
 * Randomly generate passwords.
 * Up to 40 characters in a generated password.
@@ -12,19 +14,28 @@
 
 </br>
 
+## Browser Support
+
+<img src="https://i.ibb.co/6rk85xy/Chrome.png" alt="Chrome" width="48" height="48"> | <img src="https://i.ibb.co/F7xMNnF/Firefox.png" alt="Firefox" width="48" height="48"> | <img src="https://i.ibb.co/yF2VTZn/Safari.png" alt="Safari" width="48" height="48"> | <img src="https://i.ibb.co/0YXJfry/Opera.png" alt="Opera" width="48" height="48"> | <img src="https://i.ibb.co/Y02pTm1/Edge.png" alt="Edge" width="48" height="48"> | <img src="https://i.ibb.co/JK9Zpyv/IE.png" alt="IE" width="48" height="48"> |
+--- | --- | --- | --- | --- | --- |
+Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ |
+
+</br>
+
 ## Installation
 
-[<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Npm-logo.svg/1200px-Npm-logo.svg.png" width=100>](https://www.npmjs.com/package/keys-to-password)
+[<img src="https://i.ibb.co/LPfBxgW/NPM.png" alt="NPM" width="100">](https://www.npmjs.com/package/keys-to-password)
 
 ```js
 npm install keys-to-password
 ```
 
-[<img src="https://stelligent.com/wp-content/uploads/2017/04/yarn-1.png" width=100>](https://yarnpkg.com/package/keys-to-password)
+[<img src="https://i.ibb.co/ZKNx1W9/Yarn.png" alt="Yarn" width="100">](https://yarnpkg.com/package/keys-to-password)
 
 ```js
 yarn add keys-to-password
 ```
+</br>
 
 ## import
 
@@ -36,7 +47,7 @@ OR
 import { Password } from "keys-to-password";
 ```
 
-</br></br>
+</br>
 
 ## Default usage
 
@@ -57,7 +68,7 @@ passwordRecover.getPassword(); // => '?gj39?GdA_gkf'
 
 ## Visual Demonstration Of The Package Concept
 
-<img src="https://i.ibb.co/bz6WvqD/workflow.png">
+<img src="https://i.ibb.co/jzy0FQD/workflow.png" alt="workflow">
 
 </br>
 
