@@ -17,7 +17,7 @@
 ## Browser Support
 
 <img src="https://i.ibb.co/6rk85xy/Chrome.png" alt="Chrome" width="48" height="48"> | <img src="https://i.ibb.co/F7xMNnF/Firefox.png" alt="Firefox" width="48" height="48"> | <img src="https://i.ibb.co/yF2VTZn/Safari.png" alt="Safari" width="48" height="48"> | <img src="https://i.ibb.co/0YXJfry/Opera.png" alt="Opera" width="48" height="48"> | <img src="https://i.ibb.co/Y02pTm1/Edge.png" alt="Edge" width="48" height="48"> |
---- | --- | --- | --- | --- | --- |
+--- | --- | --- | --- | --- |
 Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ |
 
 </br>
@@ -39,12 +39,12 @@ yarn add keys-to-password
 
 ## import
 
-### CommonJS
+CommonJS
 ```js
 const { Password } = require("keys-to-password");
 ```
 
-### ES6
+ES6
 ```js
 import { Password } from "keys-to-password";
 ```
