@@ -54,8 +54,7 @@ class Password {
 
   generate = ({passLength = 12, passStartsWith = "", passEndsWidth = ""} = {}) => {
     if (this.keyboard.length > 0) {
-      const passwordLength =
-        passLength - (passStartsWith.length + passEndsWidth.length);
+      const passwordLength = passLength - (passStartsWith.length + passEndsWidth.length);
 
       this.password += passStartsWith;
       this.setPasswordByFormula(passwordLength);
@@ -188,21 +187,24 @@ class Password {
   };
 
   setPasswordByFormula = (passLength = 12) => {
-    const hashedCombineKeys = hash({
-      privateKey: this.hashedPrivateKey,
-      publicKey: this.publicKey,
-    });
+    
+    let hashedCombineKeys = "";
+    for (let i = 0; i < Math.ceil(passLength / 40); i++) {
+      hashedCombineKeys += hash({
+        privateKey: this.hashedPrivateKey,
+        publicKey: this.publicKey,
+        i
+      });
+    }
+
     const hashedCombinedKeysSum = Array.from(hashedCombineKeys).reduce(
       (prevVal, currVal) => {
         return prevVal + currVal.charCodeAt(0);
-      },
-      0
-    );
+      }, 
+    0);
 
     for (let i = 0; i < Math.min(hashedCombineKeys.length, passLength); i++) {
-      let keyBoardIndex =
-        (i + hashedCombineKeys[i].charCodeAt(0) + hashedCombinedKeysSum) %
-        this.keyboard.length;
+      let keyBoardIndex = (i + hashedCombineKeys[i].charCodeAt(0) + hashedCombinedKeysSum) % this.keyboard.length;
       this.password += this.keyboard[keyBoardIndex];
     }
   };
