@@ -16,6 +16,15 @@ class Password {
     isContainSymbols = true,
     mustContainChars = "",
   } = {}) => {
+    this.validateKeyboard({
+      avoidChars,
+      isContainDigits,
+      isContainUpperCase,
+      isContainLowerCase,
+      isContainSymbols,
+      mustContainChars,
+    });
+
     const symbols = "!\\#$%&'()*+,-./:;<=>?@[]^_`{|}~";
     
     for (let i = 33; i < 127; i++) {
@@ -51,6 +60,29 @@ class Password {
       }
     });
   };
+
+  validateKeyboard = ({
+    avoidChars,
+    isContainDigits,
+    isContainUpperCase,
+    isContainLowerCase,
+    isContainSymbols,
+    mustContainChars,
+  }) => {
+    if (typeof avoidChars !== 'string') {
+      throw new Error("avoidChars parameter must be of type string");
+    } else if (typeof isContainDigits !== 'boolean') {
+      throw new Error("avoidChars parameter must be of type boolean");
+    } else if (typeof isContainUpperCase !== 'boolean') {
+      throw new Error("avoidChars parameter must be of type boolean");
+    } else if (typeof isContainLowerCase !== 'boolean') {
+      throw new Error("avoidChars parameter must be of type boolean");
+    } else if (typeof isContainSymbols !== 'boolean') {
+      throw new Error("avoidChars parameter must be of type boolean");
+    } else if (typeof mustContainChars !== 'string') {
+      throw new Error("mustContainChars parameter must be of type string");
+    }
+  }
 
   generate = ({passLength = 12, passStartsWith = "", passEndsWidth = ""} = {}) => {
     if (this.keyboard.length > 0) {
