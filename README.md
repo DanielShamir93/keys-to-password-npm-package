@@ -4,10 +4,13 @@
 
 </br>
 
+### This version new features (^1.2.0)
+    Password's length is unlimited.
+    Added validations to all functions.
+
 ## Features
 * Use of the private and public key method to secure password recovery only by the private key owner.
 * Randomly generate passwords.
-* Up to 40 characters in a generated password.
 * Password can be modified easily in advance (see examples below).
 * Option for using patterns (see more details below).
 * More features will come soon (getting password strength and more).
@@ -81,7 +84,7 @@ passwordRecover.getPassword(); // => '?gj39?GdA_gkf'
 ```js
 const password = new Password("your-private-key");
 password.setKeyboard();
-password.generate({ passLength: 15 });
+password.generate({ passLength: 50 });
 password.getPassword(); // => 'y$$&TTU+-&ZZ1-0'
 ```
 
@@ -96,7 +99,7 @@ const publicKey = password.getPublicKey();
 ```js
 const passwordRecover = new Password("your-private-key", publicKey);
 passwordRecover.setKeyboard();
-passwordRecover.generate({ passLength: 15 });
+passwordRecover.generate({ passLength: 50 });
 ```
 
 ### 4) Retrieve the password
