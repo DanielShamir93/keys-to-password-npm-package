@@ -26,7 +26,7 @@ class Password {
     });
 
     const symbols = "!\\#$%&'()*+,-./:;<=>?@[]^_`{|}~";
-    
+
     for (let i = 33; i < 127; i++) {
       let char = String.fromCharCode(i);
 
@@ -69,34 +69,45 @@ class Password {
     isContainSymbols,
     mustContainChars,
   }) => {
-    if (typeof avoidChars !== 'string') {
+    if (typeof avoidChars !== "string") {
       throw new Error("avoidChars parameter must be of type string");
-    } else if (typeof isContainDigits !== 'boolean') {
+    } else if (typeof isContainDigits !== "boolean") {
       throw new Error("avoidChars parameter must be of type boolean");
-    } else if (typeof isContainUpperCase !== 'boolean') {
+    } else if (typeof isContainUpperCase !== "boolean") {
       throw new Error("avoidChars parameter must be of type boolean");
-    } else if (typeof isContainLowerCase !== 'boolean') {
+    } else if (typeof isContainLowerCase !== "boolean") {
       throw new Error("avoidChars parameter must be of type boolean");
-    } else if (typeof isContainSymbols !== 'boolean') {
+    } else if (typeof isContainSymbols !== "boolean") {
       throw new Error("avoidChars parameter must be of type boolean");
-    } else if (typeof mustContainChars !== 'string') {
+    } else if (typeof mustContainChars !== "string") {
       throw new Error("mustContainChars parameter must be of type string");
     }
-  }
+  };
 
-  generate = ({passLength = 12, passStartsWith = "", passEndsWidth = ""} = {}) => {
-    if (this.keyboard.length > 0) {
-      const passwordLength = passLength - (passStartsWith.length + passEndsWidth.length);
+  generate = ({
+    passLength = 12,
+    passStartsWith = "",
+    passEndsWidth = "",
+  } = {}) => {
+    this.validateGenerate(passLength);
+    const passwordLength =
+        passLength - (passStartsWith.length + passEndsWidth.length);
 
       this.password += passStartsWith;
       this.setPasswordByFormula(passwordLength);
       this.password += passEndsWidth;
-    }
   };
 
-  generateFromPattern = (pattern = "") => {
+  validateGenerate = (passLength) => {
+    if (typeof passLength !== "number") {
+      throw new Error("passLength parameter must be of type number");
+    } else if (passLength < 1) {
+      throw new Error("passLength parameter must be a positive number");
+    }
+  }
 
-    if (typeof pattern !== 'string') {
+  generateFromPattern = (pattern = "") => {
+    if (typeof pattern !== "string") {
       throw new Error("pattern parameter must be of type string");
     }
 
@@ -224,24 +235,32 @@ class Password {
   };
 
   setPasswordByFormula = (passLength = 12) => {
-    
+    if (typeof passLength !== "number") {
+      throw new Error("passLength parameter must be of type number");
+    } else if (passLength < 1) {
+      throw new Error("passLength parameter must be a positive number");
+    }
+
     let hashedCombineKeys = "";
     for (let i = 0; i < Math.ceil(passLength / 40); i++) {
       hashedCombineKeys += hash({
         privateKey: this.hashedPrivateKey,
         publicKey: this.publicKey,
-        i
+        i,
       });
     }
 
     const hashedCombinedKeysSum = Array.from(hashedCombineKeys).reduce(
       (prevVal, currVal) => {
         return prevVal + currVal.charCodeAt(0);
-      }, 
-    0);
+      },
+      0
+    );
 
     for (let i = 0; i < Math.min(hashedCombineKeys.length, passLength); i++) {
-      let keyBoardIndex = (i + hashedCombineKeys[i].charCodeAt(0) + hashedCombinedKeysSum) % this.keyboard.length;
+      let keyBoardIndex =
+        (i + hashedCombineKeys[i].charCodeAt(0) + hashedCombinedKeysSum) %
+        this.keyboard.length;
       this.password += this.keyboard[keyBoardIndex];
     }
   };
@@ -289,7 +308,7 @@ class Password {
 
   getPublicKey = () => {
     return this.publicKey;
-  }
+  };
 }
 
 module.exports = { Password };
