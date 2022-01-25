@@ -95,6 +95,11 @@ class Password {
   };
 
   generateFromPattern = (pattern = "") => {
+
+    if (typeof pattern !== 'string') {
+      throw new Error("pattern parameter must be of type string");
+    }
+
     const matchesArray = this.breakPatternToArray(pattern);
 
     matchesArray.forEach((match) => {
