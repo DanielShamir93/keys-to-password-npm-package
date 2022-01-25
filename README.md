@@ -84,8 +84,8 @@ passwordRecover.getPassword(); // => '?gj39?GdA_gkf'
 ```js
 const password = new Password("your-private-key");
 password.setKeyboard();
-password.generate({ passLength: 50 });
-password.getPassword(); // => 'y$$&TTU+-&ZZ1-0'
+password.generate({ passLength: 20 });
+password.getPassword(); // => 'QS'-Z+8Z,:^1c%56`6h7'
 ```
 
 ### 2) Get password's public-key from the generated password
@@ -99,13 +99,13 @@ const publicKey = password.getPublicKey();
 ```js
 const passwordRecover = new Password("your-private-key", publicKey);
 passwordRecover.setKeyboard();
-passwordRecover.generate({ passLength: 50 });
+passwordRecover.generate({ passLength: 20 });
 ```
 
 ### 4) Retrieve the password
 
 ```js
-passwordRecover.getPassword(); // => 'y$$&TTU+-&ZZ1-0'
+passwordRecover.getPassword(); // => 'QS'-Z+8Z,:^1c%56`6h7'
 ```
 
 </br>
