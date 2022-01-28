@@ -4,16 +4,12 @@
 
 </br>
 
-### This version new features (^1.2.0)
-    Password's length is unlimited.
-    Added validations to all functions.
-
 ## Features
-* Use of the private and public key method to secure password recovery only by the private key owner.
+* Use of the private and public key concept to secure password recovery only by the private key owner.
+* Generate passwords with unlimited length.
 * Randomly generate passwords.
 * Password can be modified easily in advance (see examples below).
 * Option for using patterns (see more details below).
-* More features will come soon (getting password strength and more).
 
 </br>
 
@@ -94,7 +90,7 @@ password.getPassword(); // => 'QS'-Z+8Z,:^1c%56`6h7'
 const publicKey = password.getPublicKey();
 ```
 
-### 3) Recover password by private and public keys
+### 3) Recover password by the private and public keys
 
 ```js
 const passwordRecover = new Password("your-private-key", publicKey);
@@ -139,19 +135,26 @@ const generateConfig = {
 password.generate(generateConfig);
 ```
 
-### 3) Get password's public-key to keep in user storage for later password recover
-
-```js
-const publicKey = password.getPublicKey();
-```
-
-### 4) Retrieve the password
+### 3) Retrieve the password
 
 ```js
 password.getPassword(); // => 'abc3s:#dfs$2kl~d3xyz'
 ```
 
-- To recover your password keep your config objects as well as your public-key stored.
+### 4) To recover your password keep your config objects as well as your public-key stored
+
+```js
+const publicKey = password.getPublicKey();
+```
+
+### 5) Recover the password
+
+```js
+const passwordRecover = new Password("your-private-key", publicKey);
+passwordRecover.setKeyboard(keyboardConfig);
+passwordRecover.generate(generateConfig);
+passwordRecover.getPassword(); // => 'abc3s:#dfs$2kl~d3xyz'
+```
 
 </br>
 
