@@ -1,6 +1,6 @@
 {
   "name": "keys-to-password",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Generate and recover passwords from private and public keys.",
   "main": "index.js",
   "scripts": {
