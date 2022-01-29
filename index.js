@@ -121,7 +121,7 @@ class Password {
         this.password += /.*(?=\\d)/.exec(match).join("");
         modifierAmount = modifier[0].replace(/[^\d]/g, "");
         this.keyboard = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-        this.setPasswordByFormula(modifierAmount);
+        this.setPasswordByFormula(+modifierAmount);
       } else if ((modifier = /\u{\d+}$/.exec(match)) !== null) {
         // Match a uppercase modifier
         this.password += /.*(?=\\u)/.exec(match).join("");
@@ -154,7 +154,7 @@ class Password {
           "Y",
           "Z",
         ];
-        this.setPasswordByFormula(modifierAmount);
+        this.setPasswordByFormula(+modifierAmount);
       } else if ((modifier = /\\l{\d+}$/.exec(match)) !== null) {
         // Match a lowercase modifier
         this.password += /.*(?=\\l)/.exec(match).join("");
@@ -187,7 +187,7 @@ class Password {
           "y",
           "z",
         ];
-        this.setPasswordByFormula(modifierAmount);
+        this.setPasswordByFormula(+modifierAmount);
       } else if ((modifier = /\\s{\d+}$/.exec(match)) !== null) {
         // Match symbols modifier
         this.password += /.*(?=\\s)/.exec(match).join("");
@@ -226,7 +226,7 @@ class Password {
           "~",
           '"',
         ];
-        this.setPasswordByFormula(modifierAmount);
+        this.setPasswordByFormula(+modifierAmount);
       } else {
         // The last match
         this.password += match;
