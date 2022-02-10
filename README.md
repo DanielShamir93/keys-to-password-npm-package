@@ -177,14 +177,3 @@ password.getPassword(); // => 'A_2563495820-PASS'
 - \\s{n}  =>  assign n symbol characters.
 
 </br>
-
-## New features in progress
-
-### Get generated password strength.
-  Calculation parameters which are taking into account:
-  * Password's length.
-  * Password's characters types.
-  * Password contains words from the dictionary.
-  * Password contains sequences.
-
-</br></br>
