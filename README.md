@@ -171,9 +171,7 @@ password.getPassword(); // => 'A_2563495820-PASS'
 ### Pattern's syntax options:
 
 - All keyboard characters.
-- \\d{n}  =>  assign n digits.
-- \\u{n}  =>  assign n uppercase letters.
-- \\l{n}  =>  assign n lowercase letters.
-- \\s{n}  =>  assign n symbol characters.
-
-</br>
+- \\d{n}  =>  assigns n digits to the password.
+- \\u{n}  =>  assigns n uppercase letters to the password.
+- \\l{n}  =>  assigns n lowercase letters to the password.
+- \\s{n}  =>  assigns n symbol characters to the password.
